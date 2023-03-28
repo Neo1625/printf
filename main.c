@@ -13,5 +13,7 @@ int main(void)
 	_printf("String:[%s]\n", "I am a string !");
 	_printf("Percent:[%%]\n");
 	_printf("Let's try to printf a simple sentence.\n");
+	_printf("this is not a fmt spec %r here\n");
+	_printf("Hello%\n");
 	return (0);
 }

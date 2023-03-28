@@ -100,8 +100,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				write(STDOUT_FILENO, "Error: Invalid format string", 28);
-				return (-1);
+				i--;
+				write(STDOUT_FILENO, "%", 1);
+				total_chars_printed++;
 			}
 		}
 		else
