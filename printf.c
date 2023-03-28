@@ -55,7 +55,7 @@ int _prints(va_list s)
 
 	if (str == NULL)
 	{
-		return (0);
+		write(STDOUT_FILENO, "(null)", strlen(str));
 	}
 
 	write(STDOUT_FILENO, str, strlen(str));
