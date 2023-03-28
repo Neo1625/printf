@@ -16,7 +16,7 @@ int main(void)
 	_printf("this is not a fmt spec %r here\n");
 	_printf("Hello%\n");
 	_printf("%Hell\n");
-	_printf(NULL);
-	printf(NULL);
+	_printf("%s\n");
+	printf("%s\n");
 	return (0);
 }
