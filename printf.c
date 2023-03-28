@@ -47,6 +47,7 @@ int _printl(void)
  *
  * Return: Returns the number of characters printed.
  */
+
 int _prints(va_list s)
 {
 	char *str;
@@ -63,8 +64,6 @@ int _prints(va_list s)
 	return (strlen(str));
 }
 
-
-
 /**
  * _printf - Function that produces output accordong to a format.
  * @format: Character string.
@@ -73,7 +72,6 @@ int _prints(va_list s)
  */
 int _printf(const char *format, ...)
 {
-
 	int i, total_chars_printed = 0;
 
 	va_list a_list;
@@ -86,7 +84,7 @@ int _printf(const char *format, ...)
 	}
 
 	i = 0;
-	while (format != NULL && format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -98,10 +96,6 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				total_chars_printed += _prints(a_list);
-			}
-			else if (format[i] == '%')
-			{
-				total_chars_printed += _printl();
 			}
 			else
 			{
@@ -117,10 +111,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(a_list);
 
 	return (total_chars_printed);
 }
-
-
