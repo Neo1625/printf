@@ -16,9 +16,9 @@ int _printf(const char *format, ...);
  */
 int _printc(va_list c)
 {
-	char ret;
+	unsigned char ret;
 
-	ret = va_arg(c, int);
+	ret = (unsigned char)va_arg(c, int);
 
 	write(STDOUT_FILENO, &ret, 1);
 
