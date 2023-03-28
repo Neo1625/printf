@@ -80,6 +80,11 @@ int _printf(const char *format, ...)
 
 	va_start(a_list, format);
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
+
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
