@@ -84,7 +84,7 @@ int _printf(const char *format, ...)
 	}
 
 	i = 0;
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		if (format[i] == '%')
 		{
@@ -96,6 +96,10 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				total_chars_printed += _prints(a_list);
+			}
+			else if (format[i] == '%')
+			{
+				total_chars_printed += _printl();
 			}
 			else
 			{
