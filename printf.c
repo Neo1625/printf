@@ -90,13 +90,18 @@ int _printf(const char *format, ...)
 			{
 				total_chars_printed += _printc(a_list);
 			}
-			if (format[i] == 's')
+			else if (format[i] == 's')
 			{
 				total_chars_printed += _prints(a_list);
 			}
-			if (format[i] == '%')
+			else if (format[i] == '%')
 			{
 				total_chars_printed += _printl();
+			}
+			else
+			{
+				write(STDOUT_FILENO, "Error: Invalid format string", 28);
+				return (-1);
 			}
 		}
 		else
